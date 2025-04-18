@@ -210,7 +210,7 @@
                     <div class="pattern-name">Абстрактная фабрика (Abstract Factory)</div>
                     <div>Создает семейства взаимосвязанных объектов без указания их классов.</div>
                     <div class="pattern-links">
-                        <a href="lab2/AbstractFactory/RealWorld/index.php" class="pattern-link" target="_blank">Демо</a>
+                        
                         <a href="lab2/AbstractFactory/Conceptual/index.php" class="pattern-link" target="_blank">Концепт</a>
                     </div>
                 </div>
