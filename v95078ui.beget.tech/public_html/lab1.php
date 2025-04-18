@@ -24,9 +24,9 @@ use MyProject\Classes\User;
 use MyProject\Classes\SuperUser;
 
 // Создание пользователей
-$user1 = new User("John Doe", "john", "password123");
-$user2 = new User("Jane Smith", "jane", "password456");
-$user3 = new User("Bob Wilson", "bob", "password789");
+$user1 = new User("Anton", "Anton", "123");
+$user2 = new User("lida", "lida", "1234");
+$user3 = new User("troy", "troy", "12345");
 $superUser = new SuperUser("Admin User", "admin", "adminpass", "Administrator");
 
 ?>
