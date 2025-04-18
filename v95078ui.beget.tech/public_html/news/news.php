@@ -16,266 +16,356 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <head>
     <title>Новостная лента</title>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         :root {
-            --dark-bg: #1a1a2e;
-            --card-bg: #16213e;
-            --accent: #0f3460;
-            --highlight: #e94560;
-            --text: #f1f1f1;
-            --text-secondary: #b8b8b8;
+            --primary: #4361ee;
+            --primary-light: #4895ef;
+            --secondary: #3f37c9;
+            --accent: #f72585;
+            --dark: #212529;
+            --light: #f8f9fa;
+            --gray: #6c757d;
             --success: #4cc9f0;
+            --warning: #f9a825;
             --error: #ff4757;
+            --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
         body {
-            font-family: 'JetBrains Mono', monospace;
-            background-color: var(--dark-bg);
-            color: var(--text);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: #f5f7fa;
+            color: var(--dark);
             line-height: 1.6;
-            margin: 0;
-            padding: 20px;
         }
 
-        .terminal {
-            max-width: 900px;
+        .container {
+            max-width: 1200px;
             margin: 0 auto;
-            background-color: var(--card-bg);
-            border-radius: 8px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-            overflow: hidden;
+            padding: 2rem;
         }
 
-        .terminal-header {
-            background-color: var(--accent);
-            padding: 12px 20px;
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 1.5rem 2rem;
+            box-shadow: var(--card-shadow);
+            margin-bottom: 2rem;
+            border-radius: 0 0 10px 10px;
+        }
+
+        .header-content {
             display: flex;
+            justify-content: space-between;
             align-items: center;
         }
 
-        .terminal-title {
+        .logo {
+            font-size: 1.8rem;
             font-weight: 700;
-            font-size: 1.1rem;
-        }
-
-        .terminal-controls {
             display: flex;
-            margin-left: auto;
+            align-items: center;
+            gap: 0.5rem;
         }
 
-        .control {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            margin-left: 8px;
+        .logo-icon {
+            color: var(--accent);
         }
 
-        .control-close { background-color: #ff5f56; }
-        .control-minimize { background-color: #ffbd2e; }
-        .control-maximize { background-color: #27c93f; }
-
-        .terminal-body {
-            padding: 20px;
+        .main-grid {
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 2rem;
         }
 
-        .command-line {
+        @media (max-width: 768px) {
+            .main-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: var(--card-shadow);
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            transition: var(--transition);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-header {
             display: flex;
-            margin-bottom: 20px;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
         }
 
-        .prompt {
-            color: var(--highlight);
-            margin-right: 10px;
-            font-weight: bold;
-        }
-
-        .command {
-            color: var(--text);
-        }
-
-        .content-area {
-            background-color: rgba(15, 52, 96, 0.3);
-            border-radius: 6px;
-            padding: 20px;
-            margin-bottom: 20px;
-            border-left: 3px solid var(--highlight);
-        }
-
-        .title {
-            color: var(--highlight);
+        .card-title {
             font-size: 1.3rem;
-            margin-bottom: 15px;
             font-weight: 600;
+            color: var(--primary);
+        }
+
+        .news-list {
+            display: grid;
+            gap: 1.5rem;
+        }
+
+        .news-item {
+            padding: 1.5rem;
+            border-radius: 8px;
+            background: white;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+            border-left: 4px solid var(--primary);
+        }
+
+        .news-item:hover {
+            transform: translateX(5px);
+        }
+
+        .news-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+        }
+
+        .news-meta {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            font-size: 0.85rem;
+            color: var(--gray);
+        }
+
+        .news-category {
+            background: var(--primary-light);
+            color: white;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+
+        .news-text {
+            margin-bottom: 1rem;
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        .news-actions {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            font-weight: 500;
+            text-decoration: none;
+            transition: var(--transition);
+            cursor: pointer;
+            border: none;
+            font-size: 0.9rem;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--secondary);
+        }
+
+        .btn-danger {
+            background-color: var(--error);
+            color: white;
+        }
+
+        .btn-danger:hover {
+            background-color: #ff6b81;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: var(--dark);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-family: inherit;
+            transition: var(--transition);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.2);
+        }
+
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        select.form-control {
+            appearance: none;
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+            background-repeat: no-repeat;
+            background-position: right 0.75rem center;
+            background-size: 1em;
         }
 
         .error-message {
             background-color: var(--error);
             color: white;
-            padding: 10px;
-            border-radius: 4px;
-            margin-bottom: 20px;
-            font-size: 0.9rem;
-        }
-
-        form {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-
-        input[type="text"], textarea, select {
-            background-color: rgba(0, 0, 0, 0.2);
-            border: 1px solid var(--accent);
-            color: var(--text);
-            padding: 10px;
-            border-radius: 4px;
-            font-family: 'JetBrains Mono', monospace;
-        }
-
-        textarea {
-            min-height: 100px;
-            resize: vertical;
-        }
-
-        input[type="submit"] {
-            background-color: var(--highlight);
-            color: var(--text);
-            border: none;
-            padding: 10px;
-            border-radius: 4px;
-            cursor: pointer;
-            font-weight: bold;
-            transition: all 0.2s;
-        }
-
-        input[type="submit"]:hover {
-            background-color: #d1335a;
-        }
-
-        .news-container {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-
-        .news-item {
-            background-color: rgba(15, 52, 96, 0.3);
+            padding: 1rem;
             border-radius: 6px;
-            padding: 15px;
-            border-left: 3px solid var(--success);
-        }
-
-        .news-item h3 {
-            color: var(--success);
-            margin-top: 0;
-            margin-bottom: 10px;
-        }
-
-        .news-meta {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-            margin-bottom: 10px;
-            font-size: 0.8rem;
-            color: var(--text-secondary);
-        }
-
-        .news-text {
-            margin-bottom: 15px;
+            margin-bottom: 1.5rem;
             font-size: 0.9rem;
         }
 
-        .news-actions {
-            text-align: right;
+        .sidebar-card {
+            position: sticky;
+            top: 2rem;
         }
 
-        .delete-button {
-            background-color: var(--error);
-            color: white;
-            border: none;
-            padding: 5px 10px;
-            border-radius: 4px;
-            cursor: pointer;
-            text-decoration: none;
-            font-size: 0.8rem;
-            transition: all 0.2s;
+        .stats {
+            display: grid;
+            gap: 1rem;
         }
 
-        .delete-button:hover {
-            background-color: #ff6b81;
+        .stat-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.75rem;
+            background: rgba(67, 97, 238, 0.1);
+            border-radius: 6px;
         }
 
-        .cursor {
-            display: inline-block;
-            width: 8px;
-            height: 16px;
-            background-color: var(--highlight);
-            animation: blink 1s infinite;
+        .stat-label {
+            color: var(--gray);
         }
 
-        @keyframes blink {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.3; }
+        .stat-value {
+            font-weight: 600;
+            color: var(--primary);
         }
 
-        @media (max-width: 768px) {
-            .terminal {
-                margin: 20px 10px;
+        @media (max-width: 576px) {
+            .container {
+                padding: 1rem;
             }
             
-            .terminal-body {
-                padding: 15px;
+            header {
+                padding: 1rem;
             }
             
-            .news-meta {
-                flex-direction: column;
-                gap: 5px;
+            .card {
+                padding: 1rem;
             }
         }
     </style>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <div class="terminal">
-        <div class="terminal-header">
-            <div class="terminal-title">news_system.php</div>
-            <div class="terminal-controls">
-                <div class="control control-close"></div>
-                <div class="control control-minimize"></div>
-                <div class="control control-maximize"></div>
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <i class="fas fa-newspaper logo-icon"></i>
+                <span></span>
+            </div>
+            <div class="header-actions">
+                <span class="current-date"><?= date('d.m.Y') ?></span>
             </div>
         </div>
-        
-        <div class="terminal-body">
-            <div class="command-line">
-                <span class="prompt">$</span>
-                <span class="command">запуск_новостной_системы<span class="cursor"></span></span>
+    </header>
+
+    <div class="container">
+        <?php if (!empty($errMsg)): ?>
+            <div class="error-message">
+                <i class="fas fa-exclamation-circle"></i> <?= $errMsg ?>
             </div>
-            
-            <div class="content-area">
-                <h1 class="title">ПОСЛЕДНИЕ НОВОСТИ</h1>
-                
-                <?php if (!empty($errMsg)): ?>
-                    <div class="error-message"><?= $errMsg ?></div>
-                <?php endif; ?>
-                
-                <?php require "get_news.inc.php"; ?>
-            </div>
-            
-            <div class="content-area">
-                <h2 class="title">ДОБАВИТЬ НОВОСТЬ</h2>
-                <form action="<?= $_SERVER['PHP_SELF']; ?>" method="post">
-                    <input type="text" name="title" placeholder="Заголовок новости" required>
-                    <select name="category" required>
-                        <option value="1">учёба</option>
-                        <option value="2">музыка</option>
-                        <option value="3">танцы</option>
-                    </select>
-                    <textarea name="description" placeholder="Текст новости" required></textarea>
+        <?php endif; ?>
+
+        <div class="main-grid">
+            <main>
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="card-title"><i class="fas fa-list"></i> Последние новости</h2>
+                    </div>
+                    <div class="news-list">
+                        <?php require "get_news.inc.php"; ?>
+                    </div>
+                </div>
+            </main>
+
+            <aside>
+                <div class="card sidebar-card">
+                    <div class="card-header">
+                        <h2 class="card-title"><i class="fas fa-plus-circle"></i> Добавить новость</h2>
+                    </div>
+                    <form action="<?= $_SERVER['PHP_SELF']; ?>" method="post">
+                        <div class="form-group">
+                            <label for="title" class="form-label">Заголовок</label>
+                            <input type="text" id="title" name="title" class="form-control" placeholder="Введите заголовок" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="category" class="form-label">Категория</label>
+                            <select id="category" name="category" class="form-control" required>
+                                <option value="1">Учёба</option>
+                                <option value="2">Музыка</option>
+                                <option value="3">Танцы</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="description" class="form-label">Текст новости</label>
+                            <textarea id="description" name="description" class="form-control" placeholder="Введите текст новости" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-paper-plane"></i> Опубликовать
+                        </button>
+                    </form>
+                </div>
+
+                <div class="card sidebar-card">
+                    <div class="card-header">
+                        
+                    </div>
                     
-                    <input type="submit" value="ОПУБЛИКОВАТЬ">
-                </form>
-            </div>
+                    </div>
+                </div>
+            </aside>
         </div>
     </div>
 </body>
