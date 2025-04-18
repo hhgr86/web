@@ -4,32 +4,32 @@
 return [
     [
         'id' => 1,
-        'name' => 'John Doe',
-        'email' => 'john.doe@example.com',
+        'name' => 'lida',
+        'email' => 'lida2003@mail.ru',
         'type' => 'admin'
     ],
     [
         'id' => 2,
-        'name' => 'Jane Smith',
-        'email' => 'jane.smith@example.com',
+        'name' => 'Dima',
+        'email' => 'Dima2003@example.com',
         'type' => 'customer'
     ],
     [
         'id' => 3,
-        'name' => 'Bob Johnson',
-        'email' => 'bob.johnson@example.com',
+        'name' => 'kirk',
+        'email' => 'kirk2003@example.com',
         'type' => 'customer'
     ],
     [
         'id' => 4,
-        'name' => 'Alice Williams',
-        'email' => 'alice.williams@example.com',
+        'name' => 'andrey',
+        'email' => 'andrey2003@example.com',
         'type' => 'manager'
     ],
     [
         'id' => 5,
-        'name' => 'Charlie Brown',
-        'email' => 'charlie.brown@example.com',
+        'name' => 'Wera',
+        'email' => 'Wera2003@example.com',
         'type' => 'customer'
     ]
 ]; 
