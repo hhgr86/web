@@ -206,20 +206,20 @@
                 <div class="pattern-card">
                     <div class="pattern-name">Одиночка (Singleton)</div>
                     <div class="pattern-description">
-                        Гарантирует единственный экземпляр класса Settings с глобальным доступом. Хранит настройки приложения.
+                        
                     </div>
                     <div class="pattern-links">
-                        <a href="lab3/patterns/singleton/settings_use.php" class="pattern-link" target="_blank">Демонстрация</a>
+                        <a href="lab3/patterns/singleton/settings_use.php" class="pattern-link" target="_blank">Одиночная</a>
                     </div>
                 </div>
                 
                 <div class="pattern-card">
                     <div class="pattern-name">Фабричный метод (Factory Method)</div>
                     <div class="pattern-description">
-                        Создает различные типы пользователей через абстрактную фабрику: администраторов, обычных пользователей и менеджеров.
+                        
                     </div>
                     <div class="pattern-links">
-                        <a href="lab3/patterns/factory-method/factory_use.php" class="pattern-link" target="_blank">Демонстрация</a>
+                        <a href="lab3/patterns/factory-method/factory_use.php" class="pattern-link" target="_blank">Фабричный</a>
                         <a href="lab3/patterns/factory-method/factory-method.html" class="pattern-link" target="_blank">Диаграмма</a>
                     </div>
                 </div>
@@ -227,10 +227,10 @@
                 <div class="pattern-card">
                     <div class="pattern-name">MVC (Model-View-Controller)</div>
                     <div class="pattern-description">
-                        Разделение на Модель, Представление (HTML, JSON, Text, Markdown) и Контроллер для управления данными пользователей.
+                        
                     </div>
                     <div class="pattern-links">
-                        <a href="lab3/patterns/mvc/mvc_use.php" class="pattern-link" target="_blank">Демонстрация</a>
+                        <a href="lab3/patterns/mvc/mvc_use.php" class="pattern-link" target="_blank">MVC</a>
                         <a href="lab3/patterns/mvc/mvc-pattern.html" class="pattern-link" target="_blank">Диаграмма</a>
                     </div>
                 </div>
