@@ -23,11 +23,10 @@ spl_autoload_register(function ($class) {
 use MyProject\Classes\User;
 use MyProject\Classes\SuperUser;
 
-// Создание пользователей
 $user1 = new User("Anton", "Anton", "123");
 $user2 = new User("lida", "lida", "1234");
 $user3 = new User("troy", "troy", "12345");
-$superUser = new SuperUser("Admin User", "admin", "adminpass", "Administrator");
+$superUser = new SuperUser("Adminn", "admin", "adminpass", "Administrator");
 
 ?>
 <!DOCTYPE html>
@@ -202,18 +201,13 @@ $superUser = new SuperUser("Admin User", "admin", "adminpass", "Administrator");
             </div>
             
             <div class="output">
-                <div class="section-title">ОБЫЧНЫЕ ПОЛЬЗОВАТЕЛИ</div>
-                
-                <?php foreach ([$user1, $user2, $user3] as $user): ?>
-                <div class="user-item">
-                    <div class="user-info">
-                        <div><span class="user-label">Имя:</span> <?= htmlspecialchars($user->name) ?></div>
-                        <div><span class="user-label">Логин:</span> <?= htmlspecialchars($user->login) ?></div>
-                    </div>
+                <div class="stats">
+                    <div class="section-title">СТАТИСТИКА</div>
+                    <div class="stats-item">пользователь: <?= User::getUserCount() ?></div>
+                    <div class="stats-item">Администратор: <?= SuperUser::getSuperUserCount() ?></div>
                 </div>
-                <?php endforeach; ?>
                 
-                <div class="section-title">ПРИВИЛЕГИРОВАННЫЙ ПОЛЬЗОВАТЕЛЬ</div>
+                <div class="section-title">Администратор</div>
                 
                 <div class="user-item user-super">
                     <div class="user-info">
@@ -233,11 +227,16 @@ $superUser = new SuperUser("Admin User", "admin", "adminpass", "Administrator");
                     </div>
                 </div>
                 
-                <div class="stats">
-                    <div class="section-title">СТАТИСТИКА</div>
-                    <div class="stats-item">Обычных пользователей: <?= User::getUserCount() ?></div>
-                    <div class="stats-item">Привилегированных: <?= SuperUser::getSuperUserCount() ?></div>
+                <div class="section-title">ПОЛЬЗОВАТЕЛИ</div>
+                
+                <?php foreach ([$user1, $user2, $user3] as $user): ?>
+                <div class="user-item">
+                    <div class="user-info">
+                        <div><span class="user-label">Имя:</span> <?= htmlspecialchars($user->name) ?></div>
+                        <div><span class="user-label">Логин:</span> <?= htmlspecialchars($user->login) ?></div>
+                    </div>
                 </div>
+                <?php endforeach; ?>
             </div>
             
             <div class="command-line">
