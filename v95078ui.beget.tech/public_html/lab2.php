@@ -201,7 +201,7 @@
                     <div class="pattern-name">Фабричный метод (Factory Method)</div>
                     <div>Определяет интерфейс для создания объекта, делегируя инстанцирование подклассам.</div>
                     <div class="pattern-links">
-                        <a href="lab2/FactoryMethod/RealWorld/index.php" class="pattern-link" target="_blank">Демо</a>
+                        
                         <a href="lab2/FactoryMethod/Conceptual/index.php" class="pattern-link" target="_blank">Концепт</a>
                     </div>
                 </div>
@@ -219,7 +219,7 @@
                     <div class="pattern-name">Строитель (Builder)</div>
                     <div>Отделяет конструирование сложного объекта от его представления.</div>
                     <div class="pattern-links">
-                        <a href="lab2/Builder/RealWorld/index.php" class="pattern-link" target="_blank">Демо</a>
+                        
                         <a href="lab2/Builder/Conceptual/index.php" class="pattern-link" target="_blank">Концепт</a>
                     </div>
                 </div>
@@ -228,7 +228,7 @@
                     <div class="pattern-name">Прототип (Prototype)</div>
                     <div>Создает объекты путем клонирования существующих прототипов.</div>
                     <div class="pattern-links">
-                        <a href="lab2/Prototype/RealWorld/index.php" class="pattern-link" target="_blank">Демо</a>
+                        
                         <a href="lab2/Prototype/Conceptual/index.php" class="pattern-link" target="_blank">Концепт</a>
                     </div>
                 </div>
@@ -237,7 +237,7 @@
                     <div class="pattern-name">Одиночка (Singleton)</div>
                     <div>Гарантирует единственный экземпляр класса с глобальным доступом.</div>
                     <div class="pattern-links">
-                        <a href="lab2/Singleton/RealWorld/index.php" class="pattern-link" target="_blank">Демо</a>
+                        
                         <a href="lab2/Singleton/Conceptual/index.php" class="pattern-link" target="_blank">Концепт</a>
                     </div>
                 </div>
@@ -249,7 +249,7 @@
                     <div class="pattern-name">Адаптер (Adapter)</div>
                     <div>Обеспечивает совместную работу несовместимых интерфейсов.</div>
                     <div class="pattern-links">
-                        <a href="lab2/Adapter/RealWorld/index.php" class="pattern-link" target="_blank">Демо</a>
+                        
                         <a href="lab2/Adapter/Conceptual/index.php" class="pattern-link" target="_blank">Концепт</a>
                     </div>
                 </div>
@@ -258,7 +258,7 @@
                     <div class="pattern-name">Мост (Bridge)</div>
                     <div>Разделяет абстракцию и реализацию для независимого изменения.</div>
                     <div class="pattern-links">
-                        <a href="lab2/Bridge/RealWorld/index.php" class="pattern-link" target="_blank">Демо</a>
+                        
                         <a href="lab2/Bridge/Conceptual/index.php" class="pattern-link" target="_blank">Концепт</a>
                     </div>
                 </div>
@@ -267,7 +267,7 @@
                     <div class="pattern-name">Компоновщик (Composite)</div>
                     <div>Объединяет объекты в древовидные структуры для иерархий.</div>
                     <div class="pattern-links">
-                        <a href="lab2/Composite/RealWorld/index.php" class="pattern-link" target="_blank">Демо</a>
+                        
                         <a href="lab2/Composite/Conceptual/index.php" class="pattern-link" target="_blank">Концепт</a>
                     </div>
                 </div>
@@ -276,7 +276,7 @@
                     <div class="pattern-name">Декоратор (Decorator)</div>
                     <div>Динамически добавляет объектам новые обязанности.</div>
                     <div class="pattern-links">
-                        <a href="lab2/Decorator/RealWorld/index.php" class="pattern-link" target="_blank">Демо</a>
+                        
                         <a href="lab2/Decorator/Conceptual/index.php" class="pattern-link" target="_blank">Концепт</a>
                     </div>
                 </div>
@@ -285,7 +285,7 @@
                     <div class="pattern-name">Фасад (Facade)</div>
                     <div>Предоставляет упрощенный интерфейс к сложной подсистеме.</div>
                     <div class="pattern-links">
-                        <a href="lab2/Facade/RealWorld/index.php" class="pattern-link" target="_blank">Демо</a>
+                        
                         <a href="lab2/Facade/Conceptual/index.php" class="pattern-link" target="_blank">Концепт</a>
                     </div>
                 </div>
@@ -294,7 +294,7 @@
                     <div class="pattern-name">Легковес (Flyweight)</div>
                     <div>Эффективно поддерживает множество мелких объектов.</div>
                     <div class="pattern-links">
-                        <a href="lab2/Flyweight/RealWorld/index.php" class="pattern-link" target="_blank">Демо</a>
+                        
                         <a href="lab2/Flyweight/Conceptual/index.php" class="pattern-link" target="_blank">Концепт</a>
                     </div>
                 </div>
@@ -303,7 +303,7 @@
                     <div class="pattern-name">Заместитель (Proxy)</div>
                     <div>Предоставляет суррогат или заместитель другого объекта.</div>
                     <div class="pattern-links">
-                        <a href="lab2/Proxy/RealWorld/index.php" class="pattern-link" target="_blank">Демо</a>
+                        
                         <a href="lab2/Proxy/Conceptual/index.php" class="pattern-link" target="_blank">Концепт</a>
                     </div>
                 </div>
@@ -315,7 +315,7 @@
                     <div class="pattern-name">Цепочка обязанностей (Chain of Responsibility)</div>
                     <div>Передает запрос по цепочке потенциальных обработчиков.</div>
                     <div class="pattern-links">
-                        <a href="lab2/ChainOfResponsibility/RealWorld/index.php" class="pattern-link" target="_blank">Демо</a>
+                        
                         <a href="lab2/ChainOfResponsibility/Conceptual/index.php" class="pattern-link" target="_blank">Концепт</a>
                     </div>
                 </div>
@@ -324,7 +324,7 @@
                     <div class="pattern-name">Команда (Command)</div>
                     <div>Инкапсулирует запрос как объект.</div>
                     <div class="pattern-links">
-                        <a href="lab2/Command/RealWorld/index.php" class="pattern-link" target="_blank">Демо</a>
+                        
                         <a href="lab2/Command/Conceptual/index.php" class="pattern-link" target="_blank">Концепт</a>
                     </div>
                 </div>
@@ -333,7 +333,7 @@
                     <div class="pattern-name">Итератор (Iterator)</div>
                     <div>Последовательно обходит элементы коллекции.</div>
                     <div class="pattern-links">
-                        <a href="lab2/Iterator/RealWorld/index.php" class="pattern-link" target="_blank">Демо</a>
+                        
                         <a href="lab2/Iterator/Conceptual/index.php" class="pattern-link" target="_blank">Концепт</a>
                     </div>
                 </div>
@@ -342,7 +342,7 @@
                     <div class="pattern-name">Посредник (Mediator)</div>
                     <div>Упрощает взаимодействие между классами.</div>
                     <div class="pattern-links">
-                        <a href="lab2/Mediator/RealWorld/index.php" class="pattern-link" target="_blank">Демо</a>
+                        
                         <a href="lab2/Mediator/Conceptual/index.php" class="pattern-link" target="_blank">Концепт</a>
                     </div>
                 </div>
@@ -351,7 +351,7 @@
                     <div class="pattern-name">Снимок (Memento)</div>
                     <div>Сохраняет и восстанавливает состояние объекта.</div>
                     <div class="pattern-links">
-                        <a href="lab2/Memento/RealWorld/index.php" class="pattern-link" target="_blank">Демо</a>
+                        
                         <a href="lab2/Memento/Conceptual/index.php" class="pattern-link" target="_blank">Концепт</a>
                     </div>
                 </div>
@@ -360,7 +360,7 @@
                     <div class="pattern-name">Наблюдатель (Observer)</div>
                     <div>Определяет зависимость "один-ко-многим" между объектами.</div>
                     <div class="pattern-links">
-                        <a href="lab2/Observer/RealWorld/index.php" class="pattern-link" target="_blank">Демо</a>
+                        
                         <a href="lab2/Observer/Conceptual/index.php" class="pattern-link" target="_blank">Концепт</a>
                     </div>
                 </div>
@@ -369,7 +369,7 @@
                     <div class="pattern-name">Состояние (State)</div>
                     <div>Позволяет объекту изменять поведение при изменении состояния.</div>
                     <div class="pattern-links">
-                        <a href="lab2/State/RealWorld/index.php" class="pattern-link" target="_blank">Демо</a>
+                        
                         <a href="lab2/State/Conceptual/index.php" class="pattern-link" target="_blank">Концепт</a>
                     </div>
                 </div>
@@ -378,7 +378,7 @@
                     <div class="pattern-name">Стратегия (Strategy)</div>
                     <div>Определяет семейство алгоритмов, инкапсулирует их.</div>
                     <div class="pattern-links">
-                        <a href="lab2/Strategy/RealWorld/index.php" class="pattern-link" target="_blank">Демо</a>
+                        
                         <a href="lab2/Strategy/Conceptual/index.php" class="pattern-link" target="_blank">Концепт</a>
                     </div>
                 </div>
@@ -387,7 +387,7 @@
                     <div class="pattern-name">Шаблонный метод (Template Method)</div>
                     <div>Определяет скелет алгоритма, делегируя шаги подклассам.</div>
                     <div class="pattern-links">
-                        <a href="lab2/TemplateMethod/RealWorld/index.php" class="pattern-link" target="_blank">Демо</a>
+                        
                         <a href="lab2/TemplateMethod/Conceptual/index.php" class="pattern-link" target="_blank">Концепт</a>
                     </div>
                 </div>
@@ -396,7 +396,7 @@
                     <div class="pattern-name">Посетитель (Visitor)</div>
                     <div>Определяет новую операцию без изменения классов элементов.</div>
                     <div class="pattern-links">
-                        <a href="lab2/Visitor/RealWorld/index.php" class="pattern-link" target="_blank">Демо</a>
+                        
                         <a href="lab2/Visitor/Conceptual/index.php" class="pattern-link" target="_blank">Концепт</a>
                     </div>
                 </div>
